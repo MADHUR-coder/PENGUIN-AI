@@ -1,0 +1,203 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6) 0;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 0 var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.sidebar-logo-icon {
+    font-size: 2rem;
+}
+
+.sidebar-logo-text {
+    font-size: var(--font-2xl);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--cyan), var(--aurora-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: 0 var(--space-3);
+    flex: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: var(--font-sm);
+    font-weight: 500;
+    transition: all var(--duration-normal) var(--ease-out);
+    position: relative;
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar-link.active {
+    color: var(--cyan);
+    background: var(--cyan-dim);
+}
+
+.sidebar-link-icon {
+    font-size: var(--font-lg);
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-link-indicator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: var(--cyan);
+    border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+.sidebar-economy {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    margin-top: auto;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.sidebar-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.sidebar-stat-icon {
+    font-size: var(--font-lg);
+}
+
+.sidebar-stat-value {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sidebar-stat-label {
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+}
+
+.sidebar-premium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-3) var(--space-4);
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(34, 211, 238, 0.1));
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.sidebar-premium:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+}
+
+.sidebar-premium-icon {
+    font-size: var(--font-2xl);
+}
+
+.sidebar-premium-text {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.sidebar-premium-price {
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+}
+
+/* Progression Stats */
+.sidebar-user-stats {
+    padding: var(--space-4) var(--space-6);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.user-stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.user-level-badge {
+    background: var(--cyan);
+    color: var(--bg-primary);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-xp-text {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.xp-bar-container {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--aurora-green));
+    border-radius: var(--radius-full);
+    transition: width 0.5s var(--ease-out);
+}
+
+.xp-footer {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-align: right;
+}
