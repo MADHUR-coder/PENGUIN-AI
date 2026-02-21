@@ -1,0 +1,100 @@
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+}
+
+.lab-card {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lab-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    font-size: var(--font-xs);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--cyan-primary);
+    background: rgba(0, 243, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.lab-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+}
+
+.lab-title {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.lab-desc {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.lab-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.lab-reward {
+    font-weight: 700;
+    font-size: var(--font-sm);
+    color: var(--amber);
+}
+
+.labs-cta {
+    margin-top: var(--space-12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-10);
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.labs-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.cta-content h3 {
+    font-size: var(--font-xl);
+    font-weight: 800;
+    margin-bottom: var(--space-1);
+    color: var(--amber);
+}
+
+.cta-content p {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .labs-cta {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-6);
+    }
+}

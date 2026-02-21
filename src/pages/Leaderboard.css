@@ -1,0 +1,131 @@
+.leaderboard-container {
+    margin-top: var(--space-6);
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaderboard-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 120px;
+    padding: var(--space-4) var(--space-6);
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: var(--font-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 120px;
+    padding: var(--space-4) var(--space-6);
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: background 0.2s;
+}
+
+.leaderboard-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.col-rank {
+    font-weight: 800;
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+}
+
+.col-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.col-streak {
+    font-weight: 700;
+    color: var(--amber);
+}
+
+.col-balance {
+    font-weight: 700;
+    color: var(--cyan-primary);
+}
+
+.top-1 {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.top-2 {
+    background: rgba(192, 192, 192, 0.05);
+}
+
+.top-3 {
+    background: rgba(205, 127, 50, 0.05);
+}
+
+.top-1 .col-rank {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.leaderboard-divider {
+    text-align: center;
+    padding: var(--space-2);
+    color: var(--text-secondary);
+    opacity: 0.3;
+}
+
+.current-user {
+    background: rgba(0, 243, 255, 0.05) !important;
+    border-bottom: none;
+}
+
+.current-user .user-name {
+    color: var(--cyan-primary);
+}
+
+.leaderboard-info {
+    margin-top: var(--space-6);
+    padding: var(--space-6);
+}
+
+.info-title {
+    font-size: var(--font-md);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.info-text {
+    color: var(--text-secondary);
+    font-size: var(--font-sm);
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+    .leaderboard-header,
+    .leaderboard-row {
+        grid-template-columns: 50px 1fr 80px;
+    }
+
+    .col-balance {
+        display: none;
+    }
+}

@@ -1,0 +1,134 @@
+.lab-space-container {
+    background: #020617;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #38bdf8;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.terminal-header {
+    background: #0f172a;
+    padding: var(--space-4) var(--space-8);
+    border-bottom: 2px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--text-primary);
+}
+
+.terminal-status {
+    display: flex;
+    gap: var(--space-4);
+    font-size: var(--font-sm);
+}
+
+.status-item {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    background: #1e293b;
+}
+
+.status-online {
+    color: #4ade80;
+}
+
+.terminal-main {
+    flex: 1;
+    padding: var(--space-8);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.terminal-line {
+    font-size: var(--font-md);
+    line-height: 1.6;
+}
+
+.line-prefix {
+    color: #6366f1;
+    margin-right: var(--space-2);
+}
+
+.line-success {
+    color: #4ade80;
+}
+
+.line-warning {
+    color: #fbbf24;
+}
+
+.line-error {
+    color: #f87171;
+}
+
+.terminal-input-area {
+    margin-top: auto;
+    padding-top: var(--space-8);
+}
+
+.interactive-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+}
+
+.option-btn {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    color: #38bdf8;
+    padding: var(--space-4);
+    text-align: left;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+}
+
+.option-btn:hover {
+    background: #1e293b;
+    border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.option-key {
+    color: #6366f1;
+    font-weight: 800;
+    margin-right: var(--space-3);
+}
+
+.lab-complete-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.success-badge {
+    font-size: 5rem;
+    margin-bottom: var(--space-4);
+}
