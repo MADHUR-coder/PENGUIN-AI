@@ -1,0 +1,134 @@
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.lang-path-card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lang-path-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px -10px var(--accent);
+    transform: translateY(-5px);
+}
+
+.lang-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 10px var(--accent));
+}
+
+.lang-name {
+    font-size: var(--font-xl);
+    font-weight: 800;
+}
+
+.lang-desc {
+    color: var(--text-secondary);
+    font-size: var(--font-sm);
+    line-height: 1.5;
+}
+
+.lang-badge {
+    margin-top: auto;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: 700;
+    color: var(--cyan);
+    transition: all 0.2s;
+}
+
+.lang-path-card:hover .lang-badge {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+}
+
+.level-modal {
+    width: 100%;
+    max-width: 500px;
+    padding: var(--space-10);
+    position: relative;
+    border-color: var(--cyan);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.modal-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+.level-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.level-option {
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.level-option:hover {
+    background: rgba(0, 243, 255, 0.05);
+    border-color: var(--cyan);
+    transform: translateX(5px);
+}
+
+.level-option-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-1);
+}
+
+.level-emoji {
+    font-size: 1.5rem;
+}
+
+.level-option p {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
