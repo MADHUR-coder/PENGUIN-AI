@@ -67,28 +67,76 @@ export default function Dashboard() {
                 <motion.div className="dash-header" variants={fadeUp}>
                     <div className="dash-header-left">
                         <h1 className="dash-greeting">
-                            Welcome back{state.user.name ? `, ${state.user.name}` : ''}
+                            Welcome back{state.user.name ? `, ${state.user.name}` : ''} 👋
                         </h1>
-                        <p className="dash-goal">
-                            🎯 Goal: <strong>{state.user.goal || 'Not set'}</strong>
-                        </p>
+                        <div className="dash-level-bar-container">
+                            <div className="dash-level-info">
+                                <span className="level-badge">
+                                    <span className="pulse-dot" style={{ width: 6, height: 6 }} />
+                                    LVL {state.economy.level}
+                                </span>
+                                <span className="level-xp-text">{state.economy.xp} / 2000 XP</span>
+                            </div>
+                            <div className="progress-bar" style={{ height: 8 }}>
+                                <motion.div
+                                    className="progress-bar-fill"
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${(state.economy.xp / 2000) * 100}%` }}
+                                    style={{ 
+                                        background: 'linear-gradient(90deg, var(--purple), var(--cyan))',
+                                        boxShadow: '0 0 12px var(--purple-glow)'
+                                    }}
+                                />
+                            </div>
+                        </div>
                     </div>
                     <div className="dash-header-right">
                         {state.syncStatus === 'syncing' && (
-                            <div className="sync-indicator">
-                                <span className="sync-spinner" />
-                                🛰️ Syncing Cloud...
+                            <div className="sync-indicator" style={{ 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                gap: '8px',
+                                padding: '8px 16px',
+                                background: 'var(--bg-tertiary)',
+                                borderRadius: 'var(--radius-md)',
+                                fontSize: 'var(--font-sm)',
+                                color: 'var(--text-secondary)'
+                            }}>
+                                <motion.span 
+                                    animate={{ rotate: 360 }}
+                                    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+                                    style={{ display: 'inline-block' }}
+                                >🌐</motion.span>
+                                Syncing...
                             </div>
                         )}
                         <div className="dash-badge">
-                            <span>🔥</span>
-                            <span className="dash-badge-value">{state.economy.currentStreak}</span>
-                            <span className="dash-badge-label">day streak</span>
+                            <div className="dash-badge-icon">🔥</div>
+                            <div className="dash-badge-content">
+                                <motion.span
+                                    className="dash-badge-value"
+                                    initial={{ scale: 0.5, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                                >
+                                    {state.economy.currentStreak}
+                                </motion.span>
+                                <span className="dash-badge-label">day streak</span>
+                            </div>
                         </div>
                         <div className="dash-badge">
-                            <span>💰</span>
-                            <span className="dash-badge-value">{state.economy.balance}</span>
-                            <span className="dash-badge-label">Penq</span>
+                            <div className="dash-badge-icon">💎</div>
+                            <div className="dash-badge-content">
+                                <motion.span
+                                    className="dash-badge-value"
+                                    initial={{ scale: 0.5, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 15, delay: 0.1 }}
+                                >
+                                    {state.economy.balance}
+                                </motion.span>
+                                <span className="dash-badge-label">Penq</span>
+                            </div>
                         </div>
                     </div>
                 </motion.div>

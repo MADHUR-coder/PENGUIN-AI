@@ -44,6 +44,7 @@ export default function FocusRoom() {
 
     return (
         <div className={`page-layout focus-layout ${active ? 'session-active' : ''}`}>
+            {active && <div className="focus-active-overlay" />}
             <Sidebar />
             <FocusTracker />
             <main className="main-content focus-content">

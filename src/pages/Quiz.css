@@ -9,12 +9,24 @@
 
 .quiz-bg-glow {
     position: fixed;
-    top: -300px;
-    right: -200px;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.06), transparent 70%);
+    top: -400px;
+    right: -300px;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 60%);
     pointer-events: none;
+    animation: glow-pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 .quiz-main {
@@ -29,11 +41,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--space-6);
-    padding-bottom: var(--space-4);
+    padding-bottom: var(--space-5);
     border-bottom: 1px solid var(--border-subtle);
 }
 
 .quiz-title {
+    font-family: var(--font-display);
     font-size: var(--font-2xl);
     font-weight: 700;
     background: linear-gradient(135deg, var(--text-primary), var(--cyan));
@@ -51,68 +64,111 @@
 .quiz-counter {
     color: var(--text-secondary);
     font-size: var(--font-sm);
-    font-weight: 500;
+    font-weight: 600;
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
 }
 
 .quiz-timer {
     font-size: var(--font-sm);
     font-weight: 600;
-    color: var(--text-muted);
-    background: var(--bg-tertiary);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-elevated));
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.quiz-timer::before {
+    content: '⏱';
+    font-size: var(--font-base);
 }
 
 .quiz-body {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: var(--space-6);
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-8);
     align-items: flex-start;
 }
 
 .quiz-question-area {
     display: flex;
     flex-direction: column;
-    gap: var(--space-5);
+    gap: var(--space-6);
 }
 
 .quiz-meta {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-5);
+    flex-wrap: wrap;
 }
 
 .difficulty-indicator {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
 }
 
 .difficulty-label {
     font-size: var(--font-xs);
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .difficulty-bar {
-    width: 80px;
-    height: 6px;
+    width: 100px;
+    height: 8px;
     background: var(--bg-tertiary);
     border-radius: var(--radius-full);
     overflow: hidden;
+    position: relative;
 }
 
 .difficulty-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--aurora-green), var(--amber), var(--rose));
     border-radius: var(--radius-full);
+    position: relative;
+}
+
+.difficulty-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .question-stem {
     font-size: var(--font-lg);
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.7;
     padding: var(--space-6);
+    background: linear-gradient(135deg, var(--glass-bg-elevated) 0%, rgba(30, 35, 48, 0.6) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.question-stem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
 }
 
 .answer-options {
@@ -123,6 +179,7 @@
 
 .answer-text {
     font-size: var(--font-base);
+    line-height: 1.5;
 }
 
 .quiz-progress {

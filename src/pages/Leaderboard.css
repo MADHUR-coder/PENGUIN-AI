@@ -64,8 +64,9 @@
 }
 
 .col-balance {
-    font-weight: 700;
-    color: var(--cyan-primary);
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--cyan);
 }
 
 .top-1 {
@@ -93,12 +94,15 @@
 }
 
 .current-user {
-    background: rgba(0, 243, 255, 0.05) !important;
-    border-bottom: none;
+    background: hsla(190, 85%, 60%, 0.05) !important;
+    border: 1px solid hsla(190, 85%, 60%, 0.1);
+    border-radius: var(--radius-md);
+    margin: 4px var(--space-2);
 }
 
 .current-user .user-name {
-    color: var(--cyan-primary);
+    color: var(--cyan);
+    font-weight: 700;
 }
 
 .leaderboard-info {

@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: var(--space-3);
+    transition: all var(--duration-normal) var(--ease-silk);
 }
 
 .penq-fab {
@@ -49,19 +50,27 @@
 }
 
 .penq-bubble {
-    width: 360px;
-    max-height: 520px;
+    width: 380px;
+    max-height: 540px;
+    background: var(--bg-card);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
 }
 
 .penq-bubble-header {
+    background: hsla(190, 85%, 60%, 0.1);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    margin-bottom: var(--space-3);
-    padding-bottom: var(--space-2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .penq-bubble-emoji {
@@ -105,8 +114,9 @@
 
 .chat-msg.ai {
     align-self: flex-start;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
+    background: hsla(0, 0%, 100%, 0.05);
+    color: hsl(210, 20%, 95%);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
     border-bottom-left-radius: 4px;
 }
 

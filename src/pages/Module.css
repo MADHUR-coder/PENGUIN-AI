@@ -10,9 +10,11 @@
 }
 
 .module-title {
+    font-family: var(--font-display);
     font-size: var(--font-2xl);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--text-primary), var(--cyan));
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff, var(--cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -50,31 +52,31 @@
 }
 
 .module-tab {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: 2px solid var(--border-default);
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    background: hsla(0, 0%, 100%, 0.03);
+    color: var(--text-muted);
     font-weight: 700;
-    font-size: var(--font-sm);
+    font-size: 11px;
     cursor: pointer;
-    transition: all var(--duration-normal) var(--ease-out);
+    transition: all var(--duration-normal) var(--ease-silk);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-family);
 }
 
 .module-tab.active {
     border-color: var(--cyan);
-    background: var(--cyan-dim);
+    background: hsla(190, 85%, 60%, 0.1);
     color: var(--cyan);
+    box-shadow: 0 0 15px hsla(190, 85%, 60%, 0.2);
 }
 
 .module-tab.done {
     border-color: var(--aurora-green);
-    background: var(--aurora-green-dim);
+    background: hsla(145, 80%, 65%, 0.1);
     color: var(--aurora-green);
 }
 

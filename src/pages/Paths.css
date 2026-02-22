@@ -39,18 +39,24 @@
 
 .lang-badge {
     margin-top: auto;
-    padding: var(--space-2) var(--space-4);
-    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-2) var(--space-5);
+    background: hsla(0, 0%, 100%, 0.05);
     border-radius: var(--radius-full);
-    font-size: var(--font-xs);
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--cyan);
-    transition: all 0.2s;
+    transition: all var(--duration-normal) var(--ease-silk);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
 }
 
 .lang-path-card:hover .lang-badge {
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #000;
+    border-color: transparent;
+    transform: scale(1.05);
 }
 
 /* Modal */
@@ -103,18 +109,18 @@
 }
 
 .level-option {
-    padding: var(--space-6);
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-5);
+    background: hsla(0, 0%, 100%, 0.02);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--duration-normal) var(--ease-silk);
 }
 
 .level-option:hover {
-    background: rgba(0, 243, 255, 0.05);
+    background: hsla(190, 85%, 60%, 0.05);
     border-color: var(--cyan);
-    transform: translateX(5px);
+    transform: translateX(4px) scale(1.01);
 }
 
 .level-option-head {

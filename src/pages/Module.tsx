@@ -9,6 +9,7 @@ import FocusTracker from '../components/FocusTracker';
 import FocusGraph from '../components/FocusGraph';
 import './Module.css';
 import { useEffect } from 'react';
+import confetti from 'canvas-confetti';
 
 const MODULES_CONTENT: Record<string, {
     title: string;
@@ -156,6 +157,12 @@ export default function Module() {
 
     const handleCompleteModule = () => {
         setCompleted(true);
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#22d3ee', '#34d399', '#a78bfa']
+        });
         dispatch({ type: 'ADD_COINS', payload: { amount: module.reward, reason: 'module_complete' } });
         dispatch({
             type: 'SET_MODULE_PROGRESS',
