@@ -5,10 +5,10 @@ import Sidebar from '../components/Sidebar';
 import './LanguageSelect.css';
 
 const LANGUAGES = [
-    { id: 'javascript', name: 'JavaScript', icon: '🟨', desc: 'The backbone of the web and modern apps.' },
-    { id: 'python', name: 'Python', icon: '🟦', desc: 'Powering AI, data science, and backend systems.' },
-    { id: 'cpp', name: 'C++', icon: '⚙️', desc: 'High-performance systems and game development.' },
-    { id: 'go', name: 'Go', icon: '🐹', desc: 'Efficient, cloud-native backend engineering.' },
+    { id: 'javascript', name: 'JavaScript', icon: '🟨', desc: 'The backbone of the web and modern apps.', color: '#f7df1e', topics: 5 },
+    { id: 'python', name: 'Python', icon: '🐍', desc: 'Powering AI, data science, and backend systems.', color: '#3776ab', topics: 5 },
+    { id: 'cpp', name: 'C++', icon: '⚙️', desc: 'High-performance systems and game development.', color: '#00599c', topics: 5 },
+    { id: 'go', name: 'Go', icon: '🐹', desc: 'Efficient, cloud-native backend engineering.', color: '#00add8', topics: 5 },
 ];
 
 export default function LanguageSelect() {
@@ -17,7 +17,7 @@ export default function LanguageSelect() {
 
     const selectLanguage = (langId: string) => {
         dispatch({ type: 'SET_LANGUAGE', payload: langId });
-        navigate('/dashboard');
+        navigate(`/topic-select/${langId}`);
     };
 
     return (
@@ -30,8 +30,8 @@ export default function LanguageSelect() {
                         animate={{ opacity: 1, y: 0 }}
                         className="language-header"
                     >
-                        <h1 className="section-title">Choose Your Path</h1>
-                        <p className="section-subtitle">Select the primary language you want to master. We'll tailor your daily labs and skill pentagon growth to this choice.</p>
+                        <h1 className="section-title">Choose Your Language</h1>
+                        <p className="section-subtitle">Select a language to explore topics and practice with focused quizzes. Each language has multiple topics with 5 questions each.</p>
                     </motion.div>
                 </header>
 
@@ -42,13 +42,16 @@ export default function LanguageSelect() {
                             className="language-card glass-card h-clickable"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
+                            transition={{ delay: idx * 0.08 }}
                             onClick={() => selectLanguage(lang.id)}
+                            style={{ '--lang-color': lang.color } as React.CSSProperties}
                         >
                             <div className="lang-icon">{lang.icon}</div>
                             <h2 className="lang-name">{lang.name}</h2>
                             <p className="lang-desc">{lang.desc}</p>
-                            <div className="lang-select-btn">Select Path →</div>
+                            <div className="lang-topics-count">{lang.topics} Topics · {lang.topics * 5} Questions</div>
+                            <div className="lang-select-btn" style={{ color: lang.color }}>Explore Topics →</div>
+                            <div className="lang-card-glow" style={{ background: lang.color }} />
                         </motion.div>
                     ))}
                 </div>

@@ -12,6 +12,9 @@ import LabSpace from './pages/LabSpace';
 import Paths from './pages/Paths';
 import FocusRoom from './pages/FocusRoom';
 import PathQuiz from './pages/PathQuiz';
+import TopicSelect from './pages/TopicSelect';
+import TopicQuiz from './pages/TopicQuiz';
+
 
 function AppRoutes() {
   const { state } = useApp();
@@ -61,6 +64,8 @@ function AppRoutes() {
       <Route path="/focus" element={<FocusRoom />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/path-quiz/:language/:level" element={<PathQuiz />} />
+      <Route path="/topic-select/:language" element={<TopicSelect />} />
+      <Route path="/topic-quiz/:language/:topicId" element={<TopicQuiz />} />
     </Routes>
   );
 }
